@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>安视优</title>
+
+  <!-- Font awesome -->
+  <link href="../angular/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Bootstrap and Fonts -->
+  <link href="../angular/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Inspinia CSS files -->
+  <link href="../angular/css/animate.css" rel="stylesheet">
+  <link id="loadBefore" href="../angular/css/style.css" rel="stylesheet">
+  <link href="../angular/css/dialogs.min.css" rel="stylesheet">
+  <link href="../angular/css/plugins/chosen/chosen.css" rel="stylesheet">
+  <link href="../angular/js/plugins/select2/select2.css">
+  <link href="../angular/css/plugins/iCheck/custom.css" rel="stylesheet">
+  <!--link rel="stylesheet" href="../angular/js/plugins/angular-datepicker/app/styles/style.css"/-->
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="../angular/js/plugins/angular-datepicker/dist/index.css"/>
+
+
+
+  <style>
+    body {
+      padding: 15px;
+    }
+
+    .select2 > .select2-choice.ui-select-match {
+      /* Because of the inclusion of Bootstrap */
+      height: 29px;
+    }
+
+    .selectize-control > .selectize-dropdown {
+      top: 36px;
+    }
+
+    .cropArea {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:300px;
+      height:300px;
+    }
+  </style>
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+<body ng-controller="MainCtrl as main" ng-class="{false: 'gray-bg'}[$root.isAuth]">
+
+<div ng-if="$root.isAuth == true">
+  <!-- Navigation -->
+  <div ng-include="'/angular/views/common/navigation.html'"></div>
+
+  <!-- Page wraper -->
+  <!-- ng-class with current state name give you the ability to extended customization your view -->
+  <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+
+    <!-- Page wrapper -->
+    <div ng-include="'/angular/views/common/topnavbar.html'"></div>
+
+    <!-- Main view  -->
+    <div ui-view></div>
+
+    <!-- Footer -->
+    <div ng-include="'/angular/views/common/footer.html'"></div>
+
+  </div>
+  <!-- End page wrapper-->
+</div>
+
+<div ng-if="$root.isAuth == false">
+  <!-- Main view  -->
+  <div ui-view></div>
+</div>
+
+
+
+<!-- jQuery and Bootstrap -->
+<script src="../angular/js/jquery/jquery-2.1.1.min.js"></script>
+<script src="../angular/js/plugins/jquery-ui/jquery-ui.js"></script>
+<script src="../angular/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../angular/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- MetsiMenu -->
+<script src="../angular/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- SlimScroll -->
+<script src="../angular/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Peace JS -->
+<script src="../angular/js/plugins/pace/pace.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../angular/js/inspinia.js"></script>
+
+<!--script src="js/dependencies/sails.io.js"></script-->
+
+<!-- Main Angular scripts-->
+<script src="../angular/js/angular/angular.min.js"></script>
+<script src="../angular/js/angular/angular-sanitize.js"></script>
+<script src="../angular/js/angular/angular-resource.min.js"></script>
+<script src="../angular/js/plugins/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="../angular/js/ui-router/angular-ui-router.js"></script>
+<script src="../angular/js/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<script src="../angular/js/angular/angular-sails.js"></script>
+<script src="../angular/js/angular/ng-table.js"></script>
+<script src="../angular/js/angular-dialog-service/dialogs.min.js"></script>
+<script src="../angular/js/plugins/angular-idle/angular-idle.js"></script>
+<script src="../angular/js/plugins/ng-flow/dist/ng-flow-standalone.min.js"></script>
+<script src="../angular/js/plugins/ng-flow/dist/ng-flow-standalone.min.js"></script>
+<!-- or include the files separately -->
+<script src="../angular/js/plugins/flow.js/dist/flow.min.js"></script>
+<script src="../angular/js/angular/angular-img-http-src.js"></script>
+
+
+<!-- Anglar App Script -->
+<script src="../angular/js/app.js"></script>
+<script src="../angular/js/resource.js"></script>
+<script src="../angular/js/controllers.js"></script>
+<script src="../angular/js/directives.js"></script>
+<script src="../angular/js/services.js"></script>
+<script src="../angular/js/plugins/chosen/chosen.js"></script>
+
+<!-- iCheck -->
+<script src="../angular/js/plugins/iCheck/icheck.min.js"></script>
+
+<link href="../angular/css/ng-table.min.css" rel="stylesheet">
+<!-- ui-select files -->
+<script src="../angular/js/plugins/ui-select/select.js"></script>
+<link rel="stylesheet" href="../angular/js/plugins/ui-select/select.css">
+<link rel="stylesheet" href="../angular/js/plugins/select2/select2.css">
+
+<!-- build:js module.min.js -->
+<script src="../angular/js/plugins/angular-datepicker/dist/index.js"></script>
+<!-- endbuild -->
+
+<script src='../angular/js/plugins/ngImgCrop/ng-img-crop.js'></script>
+<link href='../angular/css/plugins/ngImgCrop/ng-img-crop.css' rel="stylesheet">
+
+<script src='../angular/js/plugins/blueimp/jquery.blueimp-gallery.min.js'></script>
+<link href='../angular/css/plugins/blueimp/css/blueimp-gallery.min.css' rel="stylesheet">
+
+</body>
+</html>
